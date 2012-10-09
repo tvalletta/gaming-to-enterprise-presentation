@@ -228,3 +228,7 @@ td.title {
 td.detail {
     border: 1px solid black;
 }
+
+.invisible.shade {
+    background-color: rgba(102, 102, 102, .75);
+}

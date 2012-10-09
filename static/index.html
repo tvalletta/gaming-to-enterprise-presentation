@@ -7,8 +7,9 @@
         <meta name="author" content="Judson Flamm" />
         <link href="css/impress.css" rel="stylesheet" />
         <script type="text/javascript" src='js/jquery-1.8.2.min.js'></script>
+        <script type="text/javascript" src='js/prettify.js'></script>
     </head>
-    <body>
+    <body onload='prettyPrint()'>
 		<p class="fallback-message">
 		    Your browser doesn't support impress.js.  Try Chrome or Safari.
 		</p>
@@ -177,11 +178,34 @@
 			<div class="step" data-x="1300" data-y="1173" data-z="-800" data-scale=".8" data-focus='3d'>
 				
 			</div>
+			<div class="step invisible" data-x="1300" data-y="1173" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<iframe src="http://localhost/~nacho/pedigree" width='800px' height='600px' style='z-index: 100'></iframe>
+			</div>
 			<div class="step" data-x="1300" data-y="1246" data-z="-800" data-scale=".8" data-focus='layering'>
 				
 			</div>
 			<div class="step" data-x="1300" data-y="1319" data-z="-800" data-scale=".8" data-focus='request'>
 				
+			</div>
+			<div class="step invisible shade" data-x="1300" data-y="1319" data-z="-580" data-scale=".8" data-rotate-y="90">
+<pre class='prettyprint lang-js'>
+function mainloop() {
+	var start = +new Date;
+	...
+	var elapsed = +new Date - start;
+	setTimeout(mainloop, 16 - elapsed);
+} 
+mainloop();			
+</pre>
+			</div>
+			<div class="step invisible shade" data-x="1200" data-y="1319" data-z="-580" data-scale=".8" data-rotate-y="90">
+<pre class='prettyprint lang-js'>
+window.requestAnimationFrame(
+  function(time) {
+    ...
+  }
+);				
+</pre>
 			</div>
 			<div class="step" data-x="1300" data-y="1392" data-z="-800" data-scale=".8" data-focus='typed'>
 				
@@ -189,7 +213,7 @@
 			<div class="step" data-x="1300" data-y="1465" data-z="-800" data-scale=".8" data-focus='leveraging'>
 				
 			</div>
-			<div class="step invisible" data-x="1465" data-y="1319" data-z="-580" data-scale=".8" data-rotate-y="90" data-focus='gamepad'>
+			<div class="step invisible" data-x="1300" data-y="1465" data-z="-580" data-scale=".8" data-rotate-y="90">
 				Something useful here
 			</div>
 			<div class="step" data-x="1300" data-y="1538" data-z="-800" data-scale=".8" data-focus='profiling'>
