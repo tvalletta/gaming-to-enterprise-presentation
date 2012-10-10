@@ -44,7 +44,18 @@
 				
 			</div>
 			<div class="step invisible" data-x="100" data-y="1173" data-z="-800" data-scale=".8" data-focus='archive'>
-				Archive
+				Zip Files!<br>
+<pre class='prettyprint lang-js' style="font-size: .8em;">
+ // how to get a specific file:
+ var hf = reader.getFile('image.png');
+ hf.onerror = function() { ... }
+ hf.onsuccess = function() {
+   // this.result is a DOM File
+   alert('Filename: ' + this.result.name + '\n' +
+         'ContentType: ' + this.result.type + '\n' +
+         'Size: ' + this.result.size);
+ }
+</pre>
 			</div>
 			<div class="step invisible" data-x="100" data-y="1246" data-z="-800" data-scale=".8" data-focus='camera'>
 				Tap Into The Camera<br>				
@@ -283,9 +294,6 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 			</div>
 			<div class="step invisible" data-x="100" data-y="1830" data-z="-800" data-scale=".8" data-focus='peer'>
 				Peer to Peer
-			</div>
-			<div class="step invisible" data-x="100" data-y="1903" data-z="-800" data-scale=".8" data-focus='resource'>
-				Resource Lock
 			</div>
 			<div class="step invisible" data-x="100" data-y="1976" data-z="-800" data-scale=".8" data-focus='udp'>
 				UDP Datagram Socket API
