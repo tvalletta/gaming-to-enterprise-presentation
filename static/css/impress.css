@@ -29,7 +29,7 @@ body {
     line-height: 1;
 }
 ol, ul {
-    list-style: none;
+    list-style: disc;
 }
 blockquote, q {
     quotes: none;
@@ -142,7 +142,7 @@ a:focus {
     transition:         opacity 1s;
 }
 
-.impress-enabled .step.active, .impress-enabled .clarify { opacity: 1 }
+.impress-enabled .step.active, .impress-enabled .clarify, .impress-enabled .step.invisible.stay { opacity: 1 }
 
 .slide {
     display: block;
@@ -230,5 +230,5 @@ td.detail {
 }
 
 .invisible.shade {
-    background-color: rgba(102, 102, 102, .75);
+    background-color: rgba(102, 102, 102, .50);
 }
