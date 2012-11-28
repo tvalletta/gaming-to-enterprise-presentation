@@ -394,7 +394,7 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 			<div class="step" data-x="1300" data-y="1173" data-z="-800" data-scale=".8" data-focus='3d'>
 				
 			</div>
-			<div class="step invisible" data-x="2000" data-y="1173" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1173" data-z="2000" data-scale=".8" data-rotate-y="-180">
 				<h3>Useful for:</h3>
 				<ul style='padding-left: 40px'>
 					<li>1st Person Shooters</li>
@@ -403,10 +403,10 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 					<li>Family Pedigrees</li>
 				</ul>
 			</div>
-			<div class="step invisible" data-x="2500" data-y="1173" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1173" data-z="2500" data-scale=".8" data-rotate-y="-180">
 				<iframe src="http://localhost/~nacho/pedigree" width='800px' height='600px' style='z-index: 100'></iframe>
 			</div>
-			<div class="step invisible" data-x="3000" data-y="1173" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1173" data-z="3000" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'>
 -webkit-transform: rotateX(45deg)
                    rotateY(45deg)		
@@ -447,7 +447,7 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 			<div class="step" data-x="1300" data-y="1319" data-z="-800" data-scale=".8" data-focus='request'>
 				
 			</div>
-			<div class="step invisible" data-x="2000" data-y="1319" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1319" data-z="2000" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'>
 function mainloop() {
 	var start = +new Date;
@@ -458,7 +458,7 @@ function mainloop() {
 mainloop();			
 </pre>
 			</div>
-			<div class="step invisible" data-x="2200" data-y="1319" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1319" data-z="2500" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'>
 window.requestAnimationFrame(
   function(time) {
@@ -470,14 +470,14 @@ window.requestAnimationFrame(
 			<div class="step" data-x="1300" data-y="1392" data-z="-800" data-scale=".8" data-focus='typed'>
 				
 			</div>
-			<div class="step invisible" data-x="2000" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="2000" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'> 
 while (i) {
   array.push(i);
 }	
 </pre>
 			</div>
-			<div class="step invisible" data-x="2500" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="2500" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'> 
 var buffer = new ArrayBuffer(16);
 var int32View = new Int32Array(buffer); 
@@ -486,7 +486,7 @@ for (var i = 0; i &lt; int32View.length; i++) {
 }
 </pre>
 			</div>
-			<div class="step invisible" data-x="3000" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="3000" data-scale=".8" data-rotate-y="-180">
 				<table>
 					<tbody>
 						<tr>
@@ -535,7 +535,7 @@ for (var i = 0; i &lt; int32View.length; i++) {
 			<div class="step" data-x="1300" data-y="1465" data-z="-800" data-scale=".8" data-focus='leveraging'>
 				
 			</div>
-			<div class="step invisible" data-x="2000" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="2000" data-scale=".8" data-rotate-y="-180">
 				<h3>Graphics Processing Unit:</h3>
 				<ul style='padding-left: 40px'>
 					<li>Specialized for Graphics</li>
@@ -543,7 +543,7 @@ for (var i = 0; i &lt; int32View.length; i++) {
 					<li>Runs in a separate "thread"</li>
 				</ul>
 			</div>
-			<div class="step invisible" data-x="2500" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="2500" data-scale=".8" data-rotate-y="-180">
 				<h3>Can be offloaded to GPU*:</h3>
 				<ul style='padding-left: 40px'>
 					<li>WebGL</li>
@@ -552,8 +552,9 @@ for (var i = 0; i &lt; int32View.length; i++) {
 				</ul><br/>
 				<h4>*Must be implemented by the browser</h4>
 			</div>
-			<div class="step invisible" data-x="3000" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+			<div class="step invisible" data-x="1300" data-y="1392" data-z="3000" data-scale=".8" data-rotate-y="-180">
 <pre class='prettyprint lang-js'>
+-webkit-transition: 0.75s;
 -webkit-transform: rotateX(45deg)
                    rotateY(45deg)		
                    rotateZ(45deg)		
@@ -563,6 +564,26 @@ for (var i = 0; i &lt; int32View.length; i++) {
 			</div>
 			<div class="step" data-x="1300" data-y="1538" data-z="-800" data-scale=".8" data-focus='profiling'>
 				
+			</div>
+			<div class="step invisible center" data-x="1300" data-y="1538" data-z="2000" data-scale=".8" data-rotate-y="-180">
+				<h4>Event Timeline</h4>
+				<img src='img/events.png' width='937px' height='800px'>
+			</div>
+			<div class="step invisible center" data-x="1300" data-y="1538" data-z="2500" data-scale=".8" data-rotate-y="-180">
+				<h4>Frame Timeline</h4>
+				<img src='img/frames.png' width='937px' height='800px'>
+			</div>
+			<div class="step invisible center" data-x="1300" data-y="1538" data-z="3000" data-scale=".8" data-rotate-y="-180">
+				<h4>Memory Timeline</h4>
+				<img src='img/memory.png' width='937px' height='800px'>
+			</div>
+			<div class="step invisible center" data-x="1300" data-y="1538" data-z="3500" data-scale=".8" data-rotate-y="-180">
+				<h4>Profiling</h4>
+				<img src='img/profiles.png' width='937px' height='800px'>
+			</div>
+			<div class="step invisible center" data-x="1300" data-y="1538" data-z="4000" data-scale=".8" data-rotate-y="-180">
+				<h4>Selector Profiles</h4>
+				<img src='img/selector-profiles.png' width='937px' height='800px'>
 			</div>
 			<div class="step clarify" data-x="1200" data-y="1275" data-z="-800">
 		    	<table cellspacing="4">
@@ -664,11 +685,13 @@ for (var i = 0; i &lt; int32View.length; i++) {
 
 			<div class="step invisible" data-x="1500" data-y="1500" data-z="-1800" data-rotate-z="-90">
 				<h2>Final thoughts...</h2>
-				<h4>Social connections</h4>
-				<h4>Web Sockets</h4>
-				<h4>Gamification</h4>
-				<h4>Tutorials</h4>
-				<h4>Pre-fetching</h4>				
+				<ul>
+				<li>Social connections</li>
+				<h5> &nbsp; &nbsp; Simpler Social Integration using API Mashups<br/>
+					<em> &nbsp; &nbsp; Thursday 1:30 - 3:00 in Atlantic VI</em>
+				</h5>
+				<li>Web Sockets</li>
+				<li>Gamification</li>
 			</div>
 
 
@@ -687,6 +710,7 @@ for (var i = 0; i &lt; int32View.length; i++) {
     	var timer;
     	var focusList = [];
     	var $help = $('.help');
+    	var activeGroup;
 
     	el.addEventListener("impress:stepenter", function (event) {
     		setTimeout(function() {
@@ -707,9 +731,25 @@ for (var i = 0; i &lt; int32View.length; i++) {
     	el.addEventListener("impress:stepleave", function (event) {
     		setTimeout(function() {
 	    		var $evt = $(event.target);
+	    		
+	    		// Group Stuff
 	    		var group = $evt.attr('data-group');
-	    		if (group === 'layers') {
-	    			$evt.addClass('stay');
+	    		if (group) {
+		    		if (activeGroup) {
+		    			if (activeGroup === group) {
+		    				$evt.addClass('stay');
+		    			}
+		    			else {
+		    				$('[data-group="' + activeGroup + '"]').removeClass('stay');
+		    			}
+		    		}
+		    		else {
+		    			activeGroup = group;
+		    			$evt.addClass('stay');
+		    		}
+	    		}
+	    		else if (activeGroup) {
+					$('[data-group="' + activeGroup + '"]').removeClass('stay')
 	    		}
 
 	    		for (var i = 0, cnt = focusList.length; i < cnt; i++) {
