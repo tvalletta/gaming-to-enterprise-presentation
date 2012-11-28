@@ -62,38 +62,45 @@
 </pre>
 			</div>
 			<div class="step invisible" data-x="100" data-y="1246" data-z="-800" data-scale=".8" data-focus='camera'>
-				Tap Into The Camera<br>				
-				<video id="basic-stream" autoplay></video>
+				<div style="-webkit-transform: rotateY(30deg);">
+					Tap Into The Camera<br>				
+					<video controls id="basic-stream" autoplay style="-webkit-box-reflect: below 10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.5)));"></video>
 
-				<script>
-				function onFailSoHard(e){if(e.code==1){alert('User denied access to their camera');}else{alert('getUserMedia() not supported in your browser.');}}
+					<script>
+					function onFailSoHard(e){if(e.code==1){alert('User denied access to their camera');}else{alert('getUserMedia() not supported in your browser.');}}
 
-				(function(){
-					var video=document.querySelector('#basic-stream');
-					// var button=document.querySelector('#capture-button');
-					var localMediaStream=null;
-					//button.addEventListener('click',function(e){
-					
-						if(navigator.getUserMedia){
-							navigator.getUserMedia('video',function(stream){
-								video.src=stream;
-								video.controls=true;
-								localMediaStream=stream;
-							},onFailSoHard);
-						}else if(navigator.webkitGetUserMedia){
-							navigator.webkitGetUserMedia({video:true},function(stream){
-								video.src=window.webkitURL.createObjectURL(stream);
-								video.controls=true;
-								localMediaStream=stream;
-							},onFailSoHard);
-						}else{
-							onFailSoHard({target:video});
-						}
-				})();
-				</script>
-
+					(function(){
+						var video=document.querySelector('#basic-stream');
+						// var button=document.querySelector('#capture-button');
+						var localMediaStream=null;
+						//button.addEventListener('click',function(e){
+						
+							if(navigator.getUserMedia){
+								navigator.getUserMedia('video',function(stream){
+									video.src=stream;
+									video.controls=true;
+									localMediaStream=stream;
+								},onFailSoHard);
+							}else if(navigator.webkitGetUserMedia){
+								navigator.webkitGetUserMedia({video:true},function(stream){
+									video.src=window.webkitURL.createObjectURL(stream);
+									video.controls=true;
+									localMediaStream=stream;
+								},onFailSoHard);
+							}else{
+								onFailSoHard({target:video});
+							}
+					})();
+					</script>
+				</div>
 			</div>
-			<div class="step invisible shade" data-x="100" data-y="1246" data-z="-580" data-scale=".8" data-rotate-y="90">
+			
+			<div class="step invisible" data-x="100" data-y="1246" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<h4>Web Demo:</h4>
+				http://www.chromeexperiments.com/detail/pixelate-yourself/
+			</div>
+
+			<div class="step invisible shade" data-x="-100" data-y="1246" data-z="-580" data-scale=".8" data-rotate-y="90">
 <pre class='prettyprint lang-js' style="font-size: .8em;">
 var video=document.querySelector('#myVideoElem');
 navigator.webkitGetUserMedia({video:true},function(stream){
@@ -102,17 +109,26 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 </pre>
 			</div>
 
+			<div class="step invisible" data-x="-300" data-y="1246" data-z="-580" data-scale=".8" data-rotate-y="90">
+				other oresentations...
+				<h3>The Web API</h3>
+				by Tom Valletta & Gabriel Dayley<br>
+				Atlantic I, 3:25p - 4:45p<br>
+			</div>
+
 			<div class="step invisible" data-x="100" data-y="1319" data-z="-800" data-scale=".8" data-focus='canvas'>
-				Canvas:
+				Advantages of Canvas:
 				<ul>
 					<li>2D / 3D</li>
-					<li>Interactive</li>
+					<li>Can Be Interactive</li>
 				</ul>
 			</div>
-			<div class="step invisible" data-x="10000" data-y="10000" data-z="10000" data-scale=".8" data-focus='canvas'>
-				Interactive Graphing
-				<iframe src="http://www.humblesoftware.com/finance/index" width="800" height="600" scrolling="yes" style="border: 2px solid black;"></iframe>
+
+			<div class="step invisible" data-x="100" data-y="1319" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<h4>Web Demo:</h4>
+				http://www.humblesoftware.com/finance/index
 			</div>
+
 			<div class="step invisible" data-x="100" data-y="1392" data-z="-800" data-scale=".8" data-focus='file'>
 				Process Files:
 				<ul>
@@ -123,7 +139,7 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 			</div>
 
 			<div class="step invisible" data-x="10000" data-y="20000" data-z="10000" data-scale=".8" data-focus='canvas'>
-				Read a File:<br>
+				<h3>File Reading Progress Bar:</h3>
 				<style>
 				  #progress_bar {
 				    margin: 10px 0;
@@ -146,8 +162,8 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 				  }
 				</style>
 
-				<input type="file" id="files" name="file" />
-				<button onclick="abortRead();">Cancel read</button>
+				Please select a file<input type="file" id="files" name="file" />
+				<!-- <button onclick="abortRead();">Cancel read</button> -->
 				<div id="progress_bar"><div class="percent">0%</div></div>
 
 				<script>
@@ -203,7 +219,7 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 				      // Ensure that the progress bar displays 100% at the end.
 				      progress.style.width = '100%';
 				      progress.textContent = '100%';
-				      setTimeout("document.getElementById('progress_bar').className='';", 2000);
+				      // setTimeout("document.getElementById('progress_bar').className='';", 2000);
 				    }
 
 				    // Read in the image file as a binary string.
@@ -217,66 +233,27 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 			<div class="step invisible" data-x="100" data-y="1465" data-z="-800" data-scale=".8" data-focus='full'>
 				Full Screen
 			</div>
-			<div class="step invisible" data-x="10000" data-y="30000" data-z="10000" data-scale=".8" data-focus='canvas'>
-				Full Screen Demo:<br>
-				<section id="fullscreen">
-				<img src="http://blogs.sitepointstatic.com/examples/tech/full-screen/squirrel.jpg" alt="a squirrel">
-				<p>Oh look – a squirrel. Click to view full-screen…</p>
-				</section>
 
-				<script>
-					var e = document.getElementById("fullscreen");
-
-					e.onclick = function() {
-
-						if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-							RunPrefixMethod(document, "CancelFullScreen");
-						}
-						else {
-							RunPrefixMethod(e, "RequestFullScreen");
-						}
-
-					}
-
-					var pfx = ["webkit", "moz", "ms", "o", ""];
-					function RunPrefixMethod(obj, method) {
-						
-						var p = 0, m, t;
-						while (p < pfx.length && !obj[m]) {
-							m = method;
-							if (pfx[p] == "") {
-								m = m.substr(0,1).toLowerCase() + m.substr(1);
-							}
-							m = pfx[p] + m;
-							t = typeof obj[m];
-							if (t != "undefined") {
-								pfx = [pfx[p]];
-								return (t == "function" ? obj[m]() : obj[m]);
-							}
-							p++;
-						}
-
-					}
-
-				</script>
+			<div class="step invisible" data-x="100" data-y="1465" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<h4>Web Demo:</h4>
+				http://html5-demos.appspot.com/static/fullscreen.html
 			</div>
 
 			<div class="step invisible" data-x="100" data-y="1538" data-z="-800" data-scale=".8" data-focus='gamepad'>
 				Gamepad API
 			</div>
-			<div class="step invisible" data-x="100" data-y="1538" data-z="-580" data-scale=".8" data-rotate-y="90">
-				<ul>
-					<li>Gamepad visualisation demo - http://robhawkes.github.com/gamepad-demo/</li>
-					<li>Simple API demo page - https://bug604039.bugzilla.mozilla.org/attachment.cgi?id=549214</li>
-					<li>Another API demo page - https://bug604039.bugzilla.mozilla.org/attachment.cgi?id=550638</li>
-					<li>Example of using MozGamepad* listeners - https://gist.github.com/58b0f9ed647f72da9173</li>
-					<li>Gamepad API controlling - http://weblog.bocoup.com/javascript-firefox-nightly-introduces-dom-gamepad-events, http://jsfiddle.net/rwaldron/wPuGB/</li>
-				</ul>
-			</div>
+
 			<div class="step invisible" data-x="100" data-y="1611" data-z="-800" data-scale=".8" data-focus='idle'>
 				When the User is Away,<br>
 				&nbsp;&nbsp;&nbsp;The JavaScript will Play...
 			</div>
+
+			<div class="step invisible" data-x="100" data-y="1611" data-z="-580" data-scale=".8" data-rotate-y="90">
+				Syncing Data<br>
+				Turning Off Processor Intensive UI Theatrics
+				Turning On Processor Intensive Background Tasks
+			</div>
+
 			<div class="step invisible" data-x="100" data-y="1684" data-z="-800" data-scale=".8" data-focus='mouse'>
 				Mouse Lock:<br>
 				// Ask the browser to lock the pointer<br>
@@ -286,8 +263,9 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 				document.exitPointerLock();
 			</div>
 
-			<div class="step invisible" data-x="10000" data-y="40000" data-z="10000" data-scale=".8" data-focus='canvas'>
-				Demo: <a href='http://www.html5rocks.com/en/tutorials/pointerlock/intro/' target="_blank">http://www.html5rocks.com/en/tutorials/pointerlock/intro/</a>
+			<div class="step invisible" data-x="100" data-y="1684" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<h4>Web Demo:</h4>
+				http://www.html5rocks.com/en/tutorials/pointerlock/intro/
 			</div>
 
 			<div class="step invisible" data-x="100" data-y="1757" data-z="-800" data-scale=".8" data-focus='network'>
@@ -296,21 +274,32 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 					<li>WiFi / 3G</li>
 				</ul>
 			</div>
+
+			<div class="step invisible" data-x="100" data-y="1757" data-z="-580" data-scale=".8" data-rotate-y="90">
+				<h4>Web Demo:</h4>
+				
+			</div>
+
 			<div class="step invisible" data-x="100" data-y="1830" data-z="-800" data-scale=".8" data-focus='peer'>
 				Peer to Peer
 			</div>
+
 			<div class="step invisible" data-x="100" data-y="1976" data-z="-800" data-scale=".8" data-focus='udp'>
 				UDP Datagram Socket API
 			</div>
+
 			<div class="step invisible" data-x="100" data-y="2049" data-z="-800" data-scale=".8" data-focus='vibration'>
 				navigator.mozVibrate(1000);
 			</div>
+
 			<div class="step invisible" data-x="100" data-y="2122" data-z="-800" data-scale=".8" data-focus='webgl'>
 				WebGL
 			</div>
+
 			<div class="step invisible" data-x="100" data-y="2195" data-z="-800" data-scale=".8" data-focus='webusb'>
 				WebUSB
 			</div>
+
 			<div class="step clarify" data-x="0" data-y="1600" data-z="-800">
 		    	<table cellspacing="4">
 		    		<tbody>
