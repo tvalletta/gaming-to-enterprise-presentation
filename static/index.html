@@ -14,6 +14,10 @@
 		<p class="fallback-message">
 		    Your browser doesn't support impress.js.  Try Chrome or Safari.
 		</p>
+		<div class="help">
+			<h3>Need Help?</h3>
+			<h6>Use the arrow keys move forward and back.</h6>
+		</div>
 		<div id="impress">
 			<div id="title" class="step" data-x="2000" data-y="-200" data-z="-1400" data-rotate-y="-55" data-rotate-y="-10" data-rotate-z="53" data-scale="2">
 			    <h4>Applying</h3>
@@ -32,13 +36,13 @@
 			</div>
 
 
-			<div class="step" data-x="600" data-y="1400" data-z="1000"></div>
+			<div class="step" data-x="1200" data-y="1400" data-z="1600"></div>
 
 
 
 			<div class="step" data-x="220" data-y="800" data-z="">
 				<h4>Web Gaming</h4>
-				<h2>APIs</h2>
+				<h2>Interfaces</h2>
 			</div>
 			<div class="step" data-x="0" data-y="1600" data-z="">
 				
@@ -378,6 +382,7 @@ navigator.webkitGetUserMedia({video:true},function(stream){
 		    	</table>
 			</div>
 
+<!-- Web Gaming Techniques -->
 
 			<div class="step" data-x="1200" data-y="800" data-z="">
 				<h4>Web Gaming</h4>
@@ -571,7 +576,7 @@ for (var i = 0; i &lt; int32View.length; i++) {
 			    			<td></td>
 			    		</tr>
 			    		<tr class='focus' data-focus-id='layering'>
-			    			<td class='title'>Layering Effects</td>
+			    			<td class='title'>Compositing</td>
 			    			<td></td>
 			    		</tr>
 			    		<tr class='focus' data-focus-id='request'>
@@ -593,6 +598,69 @@ for (var i = 0; i &lt; int32View.length; i++) {
 			    	</tbody>
 		    	</table>
 			</div>
+
+
+<!-- Web Gaming Mechanics -->
+
+			<div class="step" data-x="2400" data-y="800" data-z="">
+				<h4>Web Gaming</h4>
+				<h2>Mechanics</h2>
+			</div>
+			<div class="step" data-x="2400" data-y="1600" data-z="">
+				
+			</div>
+			<div class="step" data-x="2500" data-y="1173" data-z="-800" data-scale=".8" data-focus='clear'>
+				
+			</div>
+			<div class="step invisible center" data-x="3200" data-y="1173" data-z="-480" data-scale=".8" data-rotate-y="-90">
+				<h4>Primary &amp; Secondary Objectives</h4>
+				<img src='img/objectives.png'>
+			</div>
+			<div class="step" data-x="2500" data-y="1246" data-z="-800" data-scale=".8" data-focus='guided' data-onenter='onGuidedEnter' data-onleave='onGuidedLeave'>
+				
+			</div>
+			<div class="step" data-x="2500" data-y="1319" data-z="-800" data-scale=".8" data-focus='progress'>
+				
+			</div>
+			<div class="step invisible center" data-x="3200" data-y="1319" data-z="-480" data-scale=".8" data-rotate-y="-90">
+				<h3>Linked In</h3>
+				<img src='img/progress.png'>
+			</div>
+			<div class="step" data-x="2500" data-y="1392" data-z="-800" data-scale=".8" data-focus='reward'>
+				
+			</div>
+			<div class="step invisible center" data-x="3200" data-y="1392" data-z="-480" data-scale=".8" data-rotate-y="-90">
+				<h3>Game Summary</h3>
+				<img src='img/summary.png'>
+			</div>
+			<div class="step clarify" data-x="2400" data-y="1205" data-z="-800">
+		    	<table cellspacing="4">
+		    		<tbody>
+			    		<tr class='header'>
+			    			<td class='title'>Mechanic</td>
+			    			<td></td>
+			    		</tr>
+			    		<tr class='focus' data-focus-id='clear'>
+			    			<td class='title'>Clear Goals</td>
+			    			<td></td>
+			    		</tr>
+			    		<tr class='focus' data-focus-id='guided'>
+			    			<td class='title'>Guided Interaction</td>
+			    			<td></td>
+			    		</tr>
+			    		<tr class='focus' data-focus-id='progress'>
+			    			<td class='title'>Progress Indicator</td>
+			    			<td></td>
+			    		</tr>
+			    		<tr class='focus' data-focus-id='reward'>
+			    			<td class='title'>Reward</td>
+			    			<td></td>
+			    		</tr>
+			    	</tbody>
+		    	</table>
+			</div>
+
+<!-- Final Thoughts -->
 
 			<div class="step invisible" data-x="1500" data-y="1500" data-z="-1800" data-rotate-z="-90">
 				<h2>Final thoughts...</h2>
@@ -616,30 +684,53 @@ for (var i = 0; i &lt; int32View.length; i++) {
     	var el = document.getElementById("impress");
     	impress().init();
 
+    	var timer;
     	var focusList = [];
+    	var $help = $('.help');
 
     	el.addEventListener("impress:stepenter", function (event) {
-    		var focus = $(event.target).attr('data-focus');
-    		if (focus) {
-    			var $target = $('.focus[data-focus-id="' + focus + '"]');
-    			if ($target[0]) {
-	    			$target.addClass('clarify');
-	    			focusList.push($target);
-    			}
-    		}
+    		setTimeout(function() {
+	    		var $evt = $(event.target);
+	    		var focus = $evt.attr('data-focus');
+	    		if (focus) {
+	    			var $target = $('.focus[data-focus-id="' + focus + '"]');
+	    			if ($target[0]) {
+		    			$target.addClass('clarify');
+		    			focusList.push($target);
+	    			}
+	    		}
+	    		var onenter = $evt.attr('data-onenter');
+	    		if (window[onenter]) window[onenter]();
+    		}, 200);
         }, false);
 
     	el.addEventListener("impress:stepleave", function (event) {
-    		var group = $(event.target).attr('data-group');
-    		if (group === 'layers') {
-    			$(event.target).addClass('stay');
-    		}
+    		setTimeout(function() {
+	    		var $evt = $(event.target);
+	    		var group = $evt.attr('data-group');
+	    		if (group === 'layers') {
+	    			$evt.addClass('stay');
+	    		}
 
-    		for (var i = 0, cnt = focusList.length; i < cnt; i++) {
-    			focusList[i].removeClass('clarify');
-    		}
-    		focusList = [];
+	    		for (var i = 0, cnt = focusList.length; i < cnt; i++) {
+	    			focusList[i].removeClass('clarify');
+	    		}
+	    		focusList = [];
+
+	    		var onleave = $evt.attr('data-onleave');
+	    		if (window[onleave]) window[onleave]();
+	    	}, 200);
         }, false);
+
+    	function onGuidedEnter() {
+    		timer = setTimeout(function() {
+	    		$help.addClass('show');
+    		}, 3000);
+    	}
+    	function onGuidedLeave() {
+    		clearTimeout(timer);
+			$help.removeClass('show');
+    	}
 
     </script>
     </body>

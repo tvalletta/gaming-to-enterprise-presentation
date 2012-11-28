@@ -1,0 +1,12 @@
+Add a third section called:
+
+Web Gaming Mechanics
+http://www.upsidelearning.com/blog/index.php/2010/11/15/five-lessons-from-learning-game-development/
+
+Final Thoughts
+--------------
+Social connections
+Web Sockets
+Gamification
+Tutorials
+Pre-fetching
